@@ -14,11 +14,11 @@ const config: Config = {
 						foreground: "#151515",
 						primary: {
 							foreground: "#F6FAFF",
-							DEFAULT: "#0362CF",
+							DEFAULT: "#006FEE",
 						},
 						secondary: {
-							foreground: "#151515",
-							DEFAULT: "#FFD027",
+							foreground: "#F6FAFF",
+							DEFAULT: "#9353D3",
 						},
 						success: {
 							foreground: "#F6FAFF",
@@ -40,11 +40,11 @@ const config: Config = {
 						foreground: "#F6FAFF",
 						primary: {
 							foreground: "#F6FAFF",
-							DEFAULT: "#0362CF",
+							DEFAULT: "#006FEE",
 						},
 						secondary: {
-							foreground: "#151515",
-							DEFAULT: "#FFD027",
+							foreground: "#F6FAFF",
+							DEFAULT: "#9353D3",
 						},
 						success: {
 							foreground: "#F6FAFF",
