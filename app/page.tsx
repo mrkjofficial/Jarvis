@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<main className="flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-between gap-2 p-6">
 			<div className="flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-10">
-				<Logo />
+				<Logo className="size-24" />
 				<h1 className="text-center text-xl font-bold text-default-500 sm:text-2xl">How can I help you today?</h1>
 				<div className="flex w-full flex-wrap items-center justify-center gap-2">
 					<Button className="flex h-fit w-32 flex-col items-start whitespace-normal p-3 text-left text-sm md:w-40" size="lg" startContent={<Lightbulb className="shrink-0 text-secondary" />} variant="bordered">
@@ -26,7 +26,6 @@ export default function Home() {
 			<Input
 				aria-label="chat"
 				classNames={{ base: "max-w-3xl", inputWrapper: "py-2 h-fit" }}
-				color="primary"
 				endContent={
 					<Tooltip content="Send Message" showArrow>
 						<Button aria-label="send" isIconOnly size="sm" variant="flat">
@@ -34,7 +33,7 @@ export default function Home() {
 						</Button>
 					</Tooltip>
 				}
-				placeholder="Message Jarvis..."
+				placeholder="Message Jarvis"
 				size="lg"
 				variant="bordered"
 			/>

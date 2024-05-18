@@ -4,7 +4,7 @@ import NextLink from "next/link";
 import { menuItems } from "@data";
 import React, { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { ChevronsUpDown, LogOut, MessageSquare, Settings, SquarePen, Trash2, X } from "lucide-react";
-import { Avatar, Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger, Link, Listbox, ListboxItem, ScrollShadow } from "@nextui-org/react";
+import { Avatar, Button, Dropdown, DropdownItem, DropdownMenu, DropdownSection, DropdownTrigger, Link, Listbox, ListboxItem, ScrollShadow, Tooltip } from "@nextui-org/react";
 
 type SidebarProps = {
 	open: boolean;
@@ -38,7 +38,19 @@ export default function SidebarComponent({ open, setOpen }: SidebarProps) {
 				<ScrollShadow className="h-[calc(100vh-14rem)] w-full" hideScrollBar>
 					<Listbox aria-label="chats">
 						{menuItems?.map(item => (
-							<ListboxItem aria-label={item} endContent={<Trash2 size={20} />} key={item} startContent={<MessageSquare size={20} />} textValue={item}>
+							<ListboxItem
+								aria-label={item}
+								endContent={
+									<Tooltip content="Delete Chat" showArrow>
+										<Button aria-label="delete" isIconOnly size="sm" variant="light">
+											<Trash2 size={20} />
+										</Button>
+									</Tooltip>
+								}
+								key={item}
+								startContent={<MessageSquare size={20} />}
+								textValue={item}
+							>
 								<Link as={NextLink} className="w-full truncate text-ellipsis" color="foreground" href="#">
 									{item}
 								</Link>
