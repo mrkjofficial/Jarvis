@@ -1,0 +1,43 @@
+.backdrop {
+	@apply fixed inset-0 z-50 h-screen w-screen bg-overlay/30 backdrop-blur-md backdrop-saturate-150 transition-opacity sm:hidden sm:opacity-0;
+}
+
+.container {
+	@apply fixed inset-y-0 left-0 z-50 flex h-screen w-72 flex-1 flex-col justify-between border-r-small border-divider bg-background p-6 transition-transform sm:sticky sm:translate-x-0;
+}
+
+.close-btn {
+	@apply absolute right-1 top-1 flex sm:hidden;
+}
+
+.new-chat-btn {
+	@apply w-full justify-between p-3;
+}
+
+.scroll-shadow {
+	@apply h-[calc(100vh-14rem)] w-full;
+}
+
+.link {
+	@apply w-full truncate text-ellipsis;
+}
+
+.user-btn {
+	@apply p-3;
+}
+
+.user {
+	@apply w-32 text-left;
+}
+
+.user .name {
+	@apply text-xs;
+}
+
+.user .email {
+	@apply truncate text-ellipsis text-xs;
+}
+
+.logout {
+	@apply text-danger;
+}

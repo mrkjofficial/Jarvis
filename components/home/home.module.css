@@ -1,0 +1,35 @@
+.container {
+	@apply flex w-full flex-1 flex-col items-center justify-center gap-10;
+}
+
+.logo {
+	@apply size-24;
+}
+
+.greetings {
+	@apply text-center text-xl font-bold text-default-500 sm:text-2xl;
+}
+
+.cta-container {
+	@apply flex w-full flex-wrap items-center justify-center gap-2;
+}
+
+.cta {
+	@apply flex h-fit w-32 flex-col items-start whitespace-normal p-3 text-left text-sm md:w-40;
+}
+
+.light-bulb {
+	@apply text-secondary;
+}
+
+.terminal {
+	@apply text-danger;
+}
+
+.pen-line {
+	@apply text-warning;
+}
+
+.graduation-cap {
+	@apply text-success;
+}

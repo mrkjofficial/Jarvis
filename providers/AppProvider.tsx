@@ -9,9 +9,9 @@ type ProviderProps = {
 export default function Provider({ children }: ProviderProps) {
 	const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 	return (
-		<main className="relative flex w-full items-center justify-stretch gap-2">
+		<main className="relative flex max-h-screen w-full items-center justify-center">
 			<Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-			<section className="flex w-full flex-col items-stretch justify-stretch">
+			<section className="flex w-full flex-col items-center justify-center">
 				<Navbar open={sidebarOpen} setOpen={setSidebarOpen} />
 				{children}
 			</section>

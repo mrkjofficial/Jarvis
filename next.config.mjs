@@ -1,24 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const cspHeader = `
-	base-uri 'self';
-	block-all-mixed-content;
-	connect-src 'self' blob: data:;
-	default-src 'self' blob: data:;
-	font-src 'self' https://fonts.gstatic.com;
-	form-action 'self';
-	frame-ancestors 'self' blob: data:;
-	frame-src 'self' blob: data:;
-	img-src 'self' blob: data:;
-	object-src 'self' blob: data:;
-	script-src 'self' 'unsafe-inline' http: https: 'unsafe-eval';
-	style-src 'self' 'unsafe-inline';
-	upgrade-insecure-requests;
-`;
-
 const nextConfig = {
 	images: {
-		remotePatterns: [{ hostname: "flagcdn.com", pathname: "**", protocol: "https" }],
+		remotePatterns: [{ hostname: "lh3.google.com", pathname: "**", protocol: "https" }],
 	},
 	optimizeFonts: true,
 	reactStrictMode: true,
@@ -34,15 +18,6 @@ const nextConfig = {
 				],
 			},
 			{
-				source: "/(.*)",
-				headers: [
-					{
-						key: "Content-Security-Policy",
-						value: cspHeader.replace(/\n/g, ""),
-					},
-				],
-			},
-			{
 				source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
 				headers: [
 					{ key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=()" },
@@ -54,18 +29,7 @@ const nextConfig = {
 					{ key: "X-Permitted-Cross-Domain-Policies", value: "none" },
 					{ key: "Cache-Control", value: "no-store, max-age=0, no-cache" },
 					{ key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-					// { key: "Cross-Origin-Embedder-Policy", value: "require-corp" },
-					// { key: "Clear-Site-Data", value: '"cache", "cookies", "executionContexts", "storage"' },
 				],
-			},
-		];
-	},
-	async redirects() {
-		return [
-			{
-				source: '/robots.txt',
-				destination: '/404',
-				permanent: false,
 			},
 		];
 	},

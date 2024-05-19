@@ -1,0 +1,7 @@
+.navbar-content {
+	@apply sm:hidden;
+}
+
+.brand-title {
+	@apply font-bold;
+}
